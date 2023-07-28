@@ -17,18 +17,38 @@ Before actually calculating the total number of COVID cases and deaths, record y
 
 Guess: How many total COVID cases do you think there have been in the U.S.?
 
+_This is completely off the top of my head, but I think there probably would've been **1 million COVID cases** in the US._ 
+
 Guess: How many total COVID-related deaths do you think there have been in the U.S.?
 
+_Once again, I have no background information on this whatsoever, but I would say around **600,000-800,000** COVID-related deaths in the US._ 
+
 Guess: Which state do you think has the highest number of COVID cases, and which state do you think has the lowest?
+
+I think states that were way **less strict** about taking precautionary measures against COVID ended up with the _highest number of COVID cases_, and states that
+made a **conscious effort to take COVID seriously** probably did better to _limit the COVID outbreak in their state_. 
+
+Since I'm still throwing out guesses with no background information whatsoever, I'll guess **Mississippi** for _highest number of COVID cases_ and **New York** for 
+_lowest number_ of COVID cases.
 
 ## Reflection 2
 Did the number of COVID cases and deaths surprise you? Why or why not? What about the states with the highest and lowest number of cases? How did your guesses line up with the actual results? Answer in at least 1-3 sentences
 
+I must have been really out of touch with the times, because my guess for the number of COVID cases (_around 1 million_) was **off by a factor of 100**, which is a massive difference. 
+
+I also don't think I put enough thought into the death rate for COVID, because my guess of _600,000-800,000 deaths_, **while close to the number (1.115 million)** implied that the death rate of COVID was 60-80%. 
+
+States wise, I was **very wrong** as well; I forgot to account for _population density_ across states, because California is heavily populated, and I remember hearing stories about people throwing massive parties during the quarantine, so I probably should've gone with that over COVID response. 
+
 ## Reflection 3
 Which county has the highest number of cases in the state of Washington, and does it surprise you? Why or why not? (You may need to google this county to learn about it) Answer at least in 1-3 sentences
 
+**King County** has the highest number of cases in Washington, and this is mostly **unsurprising** because _it matches the population density theme from earlier_. Per [Washington Demographics](https://www.washington-demographics.com/counties_by_population), the King County population is **around 2.5 times higher** than the second most populated county in Washington (Pierce), so it makes sense that COVID would be _more communicable in King County_ than other counties.
+
 ## Reflection 4
 Why are there so many observations (counties) in the variable `lowest_deaths_in_each_state`? That is, wouldn't you expect the number to be around 50? Why is the number greater than 50? Answer in at least 1-3 sentences
+
+**Multiple counties** in different states have **0 deaths due to COVID**. _Unlike the maximum_, where the **output is usually 1 value** (in this case the highest COVID deaths in a county for each state), states having _multiple counties with 0 deaths due to COVID_ makes sense, so the number of counties in the variable is **a lot higher than 50** for that reason.
 
 
 ## Reflection 5
