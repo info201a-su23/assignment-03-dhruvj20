@@ -54,9 +54,15 @@ Why are there so many observations (counties) in the variable `lowest_deaths_in_
 ## Reflection 5
 What do you think about the number and scale of the inconsistencies in the data? Does the fact that there are inconsistencies mean that people should not use this data? Why or why not? Answer in at least 1-3 sentences
 
+There were **844 observations** in the all_totals dataset to compare the _added county values_ and the _national raw data_, and only **27** of the rows are inconsistencies, so I don't think _3%_ of the rows being inconsistent is enough of a reason to not use the data. In my statistics class, we talk about **confidence intervals** and _reporting a range of values (per my STAT 311 professor) over one_, and with numbers like counting stats, _which can easily be miscounted_, I think interpreting the discrepancies as a _range of values_ makes this data **more than functional** to use. 
+
 
 ## Reflection 6
 Why were you interested in this particular question? Were you able to answer your question with code? What did you learn? Answer in at least 1-3 sentences
 
+I was interested by this question because I thought it was an **extension of the concepts covered in previous parts** of the assignment, and because I was curious about _when the largest COVID spike in the area_ where I live was. I **was** able to answer this question _via code_, and I learned that the **largest increase** in cases was on **January 18th, 2022**, which is interesting because I'd assume that's _after the vaccine was public_ but also during the _rise of the Delta variant_. 
+
 ## Reflection 7
 What, if anything, made you curious about this COVID analysis? What, if anything, surprised you? What might you do the same or differently on your next data wrangling project? Answer in at least 1-3 sentences
+
+The COVID analysis was **interesting** moreso _because of the scope of the questions_ this assignment made us answer as well as how to _think about using DPLYR to progress through the dataset_ to **access the value** we were interested in looking for. There _wasn't_ very much that was surprising, although I was expecting **less inconsistencies** across the county and national datasets (not that that's significant). I think I would approach any other data wrangling project **exactly the same** as I did this one. 

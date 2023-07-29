@@ -230,6 +230,9 @@ lowest_deaths_in_each_state <- data.frame(counties %>% group_by(state, county) %
 dplyr::summarize(min_deaths = min(deaths)) %>% 
 dplyr::filter(min_deaths == min(min_deaths)))
 
+# https://sparkbyexamples.com/r-programming/r-group-by-multiple-columns-or-variables/#:~:text=Group%20By%20Multiple%20Columns%20in,install%20dplyr%20first%20using%20install.
+# Used this for clarification on grouping by 2 variables at once
+
 # Reflection 4 (answer in README.md file)
 # Why are there so many counties in `lowest_deaths_in_each_state`? That is,
 # wouldn't you expect the number to be around 50? Why is the number greater
@@ -252,20 +255,26 @@ dplyr::filter(min_deaths == min(min_deaths)))
 # 4.a Create a `total_cases_counties` dataframe that adds up all the COIVD cases
 # for all the counties for every date in the counties dataframe.
 # You should name the columns `date` and `county_total_cases`.
-total_cases_counties <- NULL
+
+total_cases_counties <- data.frame(counties %>% group_by(date) %>% 
+dplyr::transmute(county_total_cases = sum(cases)) %>% dplyr::distinct())
 
 # 4.b Join `total_cases_counties` with the `national` dataframe.
 # Save this dataframe as `all_totals`.
-all_totals <- NULL
+
+all_totals <- dplyr::inner_join(national, total_cases_counties)
 
 # 4.c Filter the all_totals dataframe to find only the rows where the
 # "county_total_cases" column does not match the "cases" column
 # Save as national_county_diff
-national_county_diff <- NULL
+
+national_county_diff <- all_totals %>% dplyr::filter(cases != county_total_cases)
 
 # 4.d Calculate the number of rows in the national_county_diff dataframe
 # Save as num_national_county_diff
-num_national_county_diff <- NULL
+
+num_national_county_diff <- national_county_diff %>% dplyr::select(date) %>% 
+dplyr::summarise(n()) %>% pull()
 
 # Reflection 5 (answer in README.md file)
 # What do you think about the number and scale of the inconsistencies in the
@@ -279,11 +288,15 @@ num_national_county_diff <- NULL
 # about this COVID data, and then write code to answer it (at least 2-3 lines)
 
 # QUESTION:  Write your question in English language words here
-#
-#
+# 
+# In King County, which day had the highest rise in COVID casess?
 
 #  Write code (at least 2-3 lines) that will answer your question
-my_answer <- NULL
+
+my_answer <- counties %>%  dplyr::filter(county_state == "King, Washington") %>%
+dplyr::mutate(case_increases = lag(lead(cases)-cases)) %>% 
+dplyr::arrange(desc(case_increases)) %>% dplyr::filter(date == "2022-01-18") %>%
+dplyr::select(date) %>% pull()
 
 # Reflection 6 (answer in README.md file)
 # Why were you interested in this particular question? Were you able to answer
